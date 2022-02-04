@@ -4,7 +4,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // The `/api/products` endpoint
 
 
-// get all products
+//GET ROUTE TO SHOW ALL CATEGORIES
 router.get('/', (req, res) => {
   Product.findAll({
     include:[Category,Tag]
@@ -12,11 +12,11 @@ router.get('/', (req, res) => {
     res.status(200).json(products);
   }).catch(err=> {
     console.log(err);
-    res.status(400).send("that didn't work")
+    res.status(400).json(err)
   });
 });
 
-// get one product
+//GET ROUTE TO SHOW A PRODUCT BY ID
 router.get('/:id', async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {include:[Category,Tag]});
@@ -30,7 +30,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// create new product
+//POST ROUTE TO CREATE A NEW PRODUCT
 router.post('/', (req, res) => {
   /* req.body should look like this...
     {
@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
 
 
 
-// UPDATE A PRODUCT // THIS WORKS //////////////////////
+//PUT ROUTE TO UPDATE A PRODUCT BY ID
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -101,13 +101,13 @@ router.put('/:id', (req, res) => {
     })
     .then((updatedProductTags) => res.status(200).json(updatedProductTags))
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });
 
+//DELETE ROUTE TO DELETE A PRODUCT BY ID
 router.delete('/:id', (req, res) => {
-  // delete one product by its `id` value
   Product.destroy({
     where: {
       id: req.params.id,

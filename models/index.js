@@ -1,4 +1,4 @@
-// import models
+// import all the models since we will be assigning their associations below
 const Product = require('./Product');
 const Category = require('./Category');
 const Tag = require('./Tag');

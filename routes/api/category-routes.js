@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
+
 // The `/api/categories` endpoint
 
 
-//GET ALL CATEGORIES
+//GET ROUTE TO SHOW ALL CATEGORIES
 router.get('/', (req, res) => {
   Category.findAll({
     include:[Product]
@@ -12,18 +13,16 @@ router.get('/', (req, res) => {
     res.status(200).json(categories);
   }).catch(err=> {
     console.log(err);
-    res.status(400).send("that didn't work")
+    res.status(400).json(err)
   });
-  // find all categories
-  // be sure to include its associated Products
 });
 
-//GET CATEGORIES BY ID
+//GET ROUTE TO SHOW A CATEGORY BY ID
 router.get('/:id', async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {include:[Product]});
   if (!categoryData) {
-    res.status(404).json({ message: "No category with this id!"});
+    res.status(404).json({ message: "No category with this id! Try again."});
     return;
   }
     res.status(200).json(categoryData);
@@ -32,7 +31,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-//CREATE NEW CATEGORY
+//POST ROUTE TO CREATE A NEW CATEGORY
 router.post('/', (req, res) => {
   Category.create(req.body)
   .then((newCategory) => res.status(200).json(newCategory))
@@ -42,7 +41,7 @@ router.post('/', (req, res) => {
   });
 });
 
-//UPDATE CATEGORY BY ID
+//PUT ROUTE TO UPDATE A CATEGORY BY ID
 router.put('/:id', async (req, res) => {
   try {
     const categoryData = await Category.update(req.body, {
@@ -51,18 +50,17 @@ router.put('/:id', async (req, res) => {
       },
     });
     if(!categoryData[0]) {
-      res.status(404).json({ message: 'No tag with this id'});
+      res.status(404).json({ message: "No category with this id! Try again."});
       return;
     }
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(400).json(err);
   }
-  // update a category by its `id` value
 });
 
+//DELETE ROUTE TO DELETE A CATEGORY BY ID
 router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
   Category.destroy({
     where: {
       id: req.params.id,

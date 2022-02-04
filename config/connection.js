@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize');
-require('dotenv').config();
+const Sequelize = require('sequelize'); //required to use sequelize package
+require('dotenv').config(); //required to use .env package and hide sensitive info
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
