@@ -56,7 +56,7 @@ Follow the Installation instructions above then use [Insomnia](https://insomnia.
 
 
 ### Category Routes
-![GIF of Category API Routes](assets/Categories.gif)
+![GIF of Category API Routes](assets/Categories.gif)     
 There are five routes to handle various data in the Category model
 - GET all Categories (returns all categories in the database)
 - GET a Category by ID (returns a single category that matches the requested id)
@@ -65,7 +65,7 @@ There are five routes to handle various data in the Category model
 - DELETE to delete a Category by ID (deletes the specified category from the database)
 
 ### Product Routes
-![GIF of Product API Routes](assets/Products.gif)
+![GIF of Product API Routes](assets/Products.gif)    
 There are five routes to handle various data in the Product model
 - GET all Products (returns all products in the database)
 - GET a Product by ID (returns a single product that matches the requested id)
@@ -74,7 +74,7 @@ There are five routes to handle various data in the Product model
 - DELETE to delete a Product by ID (deletes the specified product from the database)
 
 ### Tag Routes
-![GIF of Tag API Routes](assets/Tags.gif)
+![GIF of Tag API Routes](assets/Tags.gif)     
 There are five routes to handle various data in the Tag model
 - GET all Tags (returns all tags in the database)
 - GET a Tag by ID (returns a single tag that matches the requested id)
