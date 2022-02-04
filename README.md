@@ -47,13 +47,13 @@ npm run seed
 ```
 node server.js
 ```
-(Alternatively, you can run `nodemon server.js` if you have that package installed)
+(Alternatively, you can run `nodemon server.js` if you have the [Nodemon package](https://www.npmjs.com/package/nodemon) installed)
 - Congrats, you have successfully launched the server and are ready to explore the routes in [Insomnia](https://insomnia.rest/) (or any equivalent API platform/client) ✅
 
 ## Usage
 Follow the Installation instructions above then use [Insomnia](https://insomnia.rest/) to explore the following routes
 
-# Category Routes
+### Category Routes
 There are five routes to handle various data in the Category model
 - GET all Categories (returns all categories in the database)
 - GET a Category by ID (returns a single category that matches the requested id)
@@ -61,7 +61,7 @@ There are five routes to handle various data in the Category model
 - PUT to update a Category by ID (updates the specified category, takes in certain parameters)
 - DELETE to delete a Category by ID (deletes the specified category from the database)
 
-# Product Routes
+### Product Routes
 There are five routes to handle various data in the Product model
 - GET all Products (returns all products in the database)
 - GET a Product by ID (returns a single product that matches the requested id)
@@ -69,7 +69,7 @@ There are five routes to handle various data in the Product model
 - PUT to update a Product by ID (updates the specified product, takes in certain parameters)
 - DELETE to delete a Product by ID (deletes the specified product from the database)
 
-# Tag Routes
+### Tag Routes
 There are five routes to handle various data in the Tag model
 - GET all Tags (returns all tags in the database)
 - GET a Tag by ID (returns a single tag that matches the requested id)
