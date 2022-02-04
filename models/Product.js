@@ -1,7 +1,7 @@
 // import important parts of sequelize library
 const database = require('mime-db');
 const { Model, DataTypes } = require('sequelize');
-const Category = require('./Category');
+// const Category = require('./Category');
 // import our database connection from config.js
 const sequelize = require('../config/connection');
 
@@ -22,7 +22,7 @@ Product.init(
       allowNull: false,
     },
     price: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(10,2),
       allowNull: false,
       validate: { isDecimal: true },
     },
@@ -37,6 +37,7 @@ Product.init(
       references: {
         model: 'Category',
         key: 'id'
+
       }
     }
     // define columns
