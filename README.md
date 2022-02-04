@@ -1,7 +1,9 @@
 # ORM (Object Relational Mapping) E-Commerce Back End [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-I built this E-Commerce Back End application using the [MySQL2](https://www.npmjs.com/package/mysql2), [Sequelize](https://www.npmjs.com/package/sequelize), [dotenv](https://www.npmjs.com/package/dotenv) and [Express](https://www.npmjs.com/package/express) packages to connect to a MySQL database. It is especially useful for an E-Commerce company to organize their `Categories` of `Products` and the various `Tags` that their products hold. It's quick and easy to follow the API routes to `Create`, `Read`, `Update`, and `Delete` data. 
+I built this E-Commerce Back End application using the [MySQL2](https://www.npmjs.com/package/mysql2), [Sequelize](https://www.npmjs.com/package/sequelize), [dotenv](https://www.npmjs.com/package/dotenv), and [Express](https://www.npmjs.com/package/express) packages to connect to a MySQL database.  
+It is especially useful for an E-Commerce company to organize their `Categories` of `Products` and the various `Tags` that their products hold.  
+It's quick and easy to follow the API routes to `Create`, `Read`, `Update`, and `Delete` data. 
 
 
 ## Table of Contents
