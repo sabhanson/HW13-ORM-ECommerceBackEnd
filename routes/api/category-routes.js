@@ -3,6 +3,8 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
+
+//GET ALL CATEGORIES
 router.get('/', (req, res) => {
   Category.findAll({
     include:[Product]
@@ -16,7 +18,7 @@ router.get('/', (req, res) => {
   // be sure to include its associated Products
 });
 
-
+//GET CATEGORIES BY ID
 router.get('/:id', async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {include:[Product]});
@@ -28,10 +30,9 @@ router.get('/:id', async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-  // find one category by its `id` value
-  // be sure to include its associated Products
 });
 
+//CREATE NEW CATEGORY
 router.post('/', (req, res) => {
   Category.create(req.body)
   .then((newCategory) => res.status(200).json(newCategory))
@@ -39,10 +40,24 @@ router.post('/', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-  // create a new category
 });
 
-router.put('/:id', (req, res) => {
+//UPDATE CATEGORY BY ID
+router.put('/:id', async (req, res) => {
+  try {
+    const categoryData = await Category.update(req.body, {
+      where: {
+        id: req.params.id
+      },
+    });
+    if(!categoryData[0]) {
+      res.status(404).json({ message: 'No tag with this id'});
+      return;
+    }
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
   // update a category by its `id` value
 });
 
