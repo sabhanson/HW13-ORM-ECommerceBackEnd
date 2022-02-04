@@ -53,6 +53,9 @@ node server.js
 ## Usage
 Follow the Installation instructions above then use [Insomnia](https://insomnia.rest/) to explore the following routes
 
+
+![GIF of Category API Routes](assets/Categories.gif)
+
 ### Category Routes
 There are five routes to handle various data in the Category model
 - GET all Categories (returns all categories in the database)
