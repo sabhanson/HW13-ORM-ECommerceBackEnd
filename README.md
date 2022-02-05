@@ -51,8 +51,18 @@ node server.js
 - Congrats, you have successfully launched the server and are ready to explore the routes in [Insomnia](https://insomnia.rest/) (or any equivalent API platform/client) ✅
 
 ## Usage
-Follow the Installation instructions above then use [Insomnia](https://insomnia.rest/) to explore the following routes
 
+Visit the deployed Heroku site at these URL endpoints
+- [/api/categories](https://peaceful-fortress-89750.herokuapp.com/api/categories) to see all categories in the database
+  - add `/:id` to this endpoint to access a specific category by the id number
+- [/api/products](https://peaceful-fortress-89750.herokuapp.com/api/products) to see all products in the database
+  - add `/:id` to this endpoint to access a specific product by the id number
+- [/api/tags](https://peaceful-fortress-89750.herokuapp.com/api/tags) to see all tags in the database  
+  - add `/:id` to this endpoint to access a specific tag by the id number
+
+OR
+
+Follow the [Installation](#installation) instructions above then use [Insomnia](https://insomnia.rest/) to explore the following routes
 
 
 ### Category Routes
